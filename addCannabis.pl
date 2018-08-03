@@ -5,6 +5,8 @@ use Moose;
 use Cannabis;
 use Utils;
 
+my $utils = Utils->new();
+
 my $cannabis = Cannabis->new(
   name        => $utils->getValue('name'),
   description => $utils->getValue('description'),
