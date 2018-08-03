@@ -25,6 +25,16 @@ foreach my $key (keys %list) {
   my $cannabis = Cannabis->new(%{$list{$key}});
   if( defined $cannabis->name ) {
     $cannabis->printStrainDescription;
+
+    # my $meta = $cannabis->meta();
+    #
+    # for my $attribute ( $meta->get_all_attributes ) {
+    #   print $attribute->name(), "\n";
+    # }
+    #
+    # for my $method ($meta->get_all_methods) {
+    #   print $method->name(), "\n";
+    # }
   }
   else {
     # silently cleaning up (it's ok)

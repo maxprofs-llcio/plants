@@ -5,7 +5,9 @@ use Moose;
 ##
 # If value was provided as a paramter use it otherwise prompt for the value
 sub getValue {
-  my $value = $_[0];
+  # my $value = $_[0];
+  my $self = shift;
+  my $value = shift;
   foreach my $arg (@ARGV) {
     if( $arg =~ m/$value/ ) {
       (undef, $value) = split(/=/, $arg);
@@ -18,4 +20,7 @@ sub getValue {
   chomp $value;
   return $value;
 }
+
+no Moose;
+__PACKAGE__->meta->make_immutable;
 1;

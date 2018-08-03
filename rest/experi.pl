@@ -23,6 +23,7 @@ get '/list' => sub {
     foreach my $key (keys %list) {
        my $cannabis = Cannabis->new(%{$list{$key}});
        $shortList{$cannabis->name}{'description'} = $cannabis->description;
+       $shortList{$cannabis->name}{'thc:cbd:thcv'} = $cannabis->getRatio;
     }
     $content->render(json => \%shortList);
    } else {

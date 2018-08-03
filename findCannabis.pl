@@ -12,7 +12,9 @@ my %search;
 my $dbm = tie %search, 'MLDBM', $dataFile or die $!;
 undef $dbm;
 
-my $cannabis = Cannabis->new(%{$search{&Utils::getValue("search")}}); # What!?! I'm a magician i know....
+my $utils = Utils->new();
+
+my $cannabis = Cannabis->new(%{$search{$utils->getValue('search')}}); # What!?! I'm a magician i know....
 
 if( defined $cannabis->name ) {
   $cannabis->printStrainDescription;
