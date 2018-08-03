@@ -1,0 +1,5 @@
+authenticate the rest service by signing the URI key using private signing
+credentials and appending the signature to the URI
+
+https://stackoverflow.com/questions/319530/restful-authentication
+
