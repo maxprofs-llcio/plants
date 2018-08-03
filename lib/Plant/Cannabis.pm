@@ -2,7 +2,6 @@ package Cannabis;
 
 use MLDBM qw(DB_File Storable);
 use Fcntl;
-
 use Moose;
 
 extends 'Plant';

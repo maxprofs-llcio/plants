@@ -2,18 +2,18 @@
 
 use lib 'lib/';
 use Moose;
-use Cannabis;
-use Utils;
+use Plant::Cannabis;
+use Console;
 
-my $utils = Utils->new();
+my $console = Console->new();
 
 my $cannabis = Cannabis->new(
-  name        => $utils->getValue('name'),
-  description => $utils->getValue('description'),
-  thcValue    => $utils->getValue('thcValue'),
-  cbdValue    => $utils->getValue('cbdValue'),
-  thcvValue   => $utils->getValue('thcvValue'),
-  isStable    => $utils->getValue('isStable'),
+  name        => $console->getValue('name'),
+  description => $console->getValue('description'),
+  thcValue    => $console->getValue('thcValue'),
+  cbdValue    => $console->getValue('cbdValue'),
+  thcvValue   => $console->getValue('thcvValue'),
+  isStable    => $console->getValue('isStable'),
 );
 
 $cannabis->saveRecord;

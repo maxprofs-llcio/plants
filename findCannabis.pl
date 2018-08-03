@@ -4,15 +4,17 @@ use lib 'lib/';
 use MLDBM qw(DB_File Storable);
 use Fcntl;
 use Moose;
-use Cannabis;
-use Utils;
+use Plant::Cannabis;
+use Console;
 
 my $dataFile = 'data/Cannabis.bdb';
 my %search;
 my $dbm = tie %search, 'MLDBM', $dataFile or die $!;
 undef $dbm;
 
-my $cannabis = Cannabis->new(%{$search{$utils->getValue('search')}}); # What!?! I'm a magician i know....
+my $console = Console->new();
+
+my $cannabis = Cannabis->new(%{$search{$console->getValue('search')}}); 
 
 if( defined $cannabis->name ) {
   $cannabis->printStrainDescription;

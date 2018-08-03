@@ -1,11 +1,10 @@
-package Utils;
+package Console;
 
 use Moose;
 
 ##
 # If value was provided as a paramter use it otherwise prompt for the value
 sub getValue {
-  # my $value = $_[0];
   my $self = shift;
   my $value = shift;
   foreach my $arg (@ARGV) {

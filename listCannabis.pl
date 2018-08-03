@@ -4,8 +4,7 @@ use lib 'lib/';
 use MLDBM qw(DB_File Storable);
 use Fcntl;
 use Moose;
-use Cannabis;
-use Utils;
+use Plant::Cannabis;
 
 my $dataFile = 'data/Cannabis.bdb';
 my %list;

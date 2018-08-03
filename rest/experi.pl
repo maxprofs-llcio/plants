@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 use lib 'lib/';
 use Mojolicious::Lite;
-use Cannabis;
+use Plant::Cannabis;
 use Session;
 
 get '/' => sub {
