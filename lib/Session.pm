@@ -21,6 +21,13 @@ sub Authenticate() {
   return 0;
 }
 
+sub soSoz() {
+     my $html  = "<h1>We so soz!!!</h1>";
+     $html .= "<p>We can't let you see that unless you knows the codez</p>";
+     $html .= "<p>kthxbai</p>";
+     return $html;
+}
+
 no Moose;
 __PACKAGE__->meta->make_immutable;
 1;
